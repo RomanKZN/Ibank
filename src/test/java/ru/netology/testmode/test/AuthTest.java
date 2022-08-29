@@ -64,7 +64,7 @@ class AuthTest {
     @Test
     @DisplayName("Should get error message if login with wrong login")
     void shouldGetErrorIfWrongLogin() {
-        var registeredUser = getRegisteredUser("active");
+        var registeredUser = getRegisteredUser("blocked");
         $("[data-test-id=login] .input__box .input__control").val(DataGenerator.Registration.getRandomLogin());
         $("[data-test-id=password] .input__box .input__control").val(registeredUser.getPassword());
         $("[data-test-id=action-login]").click();
@@ -74,7 +74,7 @@ class AuthTest {
     @Test
     @DisplayName("Should get error message if login with wrong password")
     void shouldGetErrorIfWrongPassword() {
-        var registeredUser = getRegisteredUser("active");
+        var registeredUser = getRegisteredUser("blocked");
         $("[data-test-id=login] .input__box .input__control").val(registeredUser.getLogin());
         $("[data-test-id=password] .input__box .input__control").val(DataGenerator.Registration.getRandomPassword());
         $("[data-test-id=action-login]").click();
