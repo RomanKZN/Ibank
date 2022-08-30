@@ -44,7 +44,7 @@ class AuthTest {
     @Test
     @DisplayName("Should get error message if login with not registered user")
     void shouldGetErrorIfNotRegisteredUser() {
-        var notRegisteredUser = getUser("active");
+        var notRegisteredUser = getUser("blocked");
         $("[data-test-id=login] .input__box .input__control").val(notRegisteredUser.getLogin());
         $("[data-test-id=password] .input__box .input__control").val(notRegisteredUser.getPassword());
         $("[data-test-id=action-login]").click();
